@@ -37,7 +37,7 @@ export default ({
                 alert('Caricamento riuscito');
             }).catch(error => {
                 console.log('Error', error.response.data);
-                alert('Caricamento non riuscito');
+                alert('Caricamento non riuscito. Uno o più dati sbagliati o mancanti.');
             });
         }
     },

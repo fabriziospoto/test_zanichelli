@@ -2140,7 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
         alert('Caricamento riuscito');
       })["catch"](function (error) {
         console.log('Error', error.response.data);
-        alert('Caricamento non riuscito');
+        alert('Caricamento non riuscito. Uno o più dati sbagliati o mancanti.');
       });
     }
   }
