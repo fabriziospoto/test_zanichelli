@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id="app" class="container d-flex justify-content-center">
-        <form-component></form-component>
+        <form-component csrf="{{csrf_token()}}"></form-component>
     </div>
 </body>
 </html>
