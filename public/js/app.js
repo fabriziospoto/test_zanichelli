@@ -2111,7 +2111,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      fields: {}
+    };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      axios.post('/api/tickets', this.fields).then(function (response) {
+        _this.fields = {};
+      })["catch"](function (error) {
+        // if (error.response.status == 422) {
+        //     this.errors = error.response.data.errors;
+        // }
+        console.log('Error', _this.errors = error.response.data.errors);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -37726,40 +37754,115 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "label",
+      { staticClass: "my-3", attrs: { for: "exampleFormControlInput1" } },
+      [_vm._v("Nome")]
+    ),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.fields.name,
+          expression: "fields.name",
+        },
+      ],
+      staticClass: "form-control",
+      attrs: { id: "name", name: "name", type: "text", placeholder: "Mario" },
+      domProps: { value: _vm.fields.name },
+      on: {
+        input: function ($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.$set(_vm.fields, "name", $event.target.value)
+        },
+      },
+    }),
+    _vm._v(" "),
+    _c(
+      "label",
+      { staticClass: "my-3", attrs: { for: "exampleFormControlInput1" } },
+      [_vm._v("Cognome")]
+    ),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.fields.surname,
+          expression: "fields.surname",
+        },
+      ],
+      staticClass: "form-control",
+      attrs: {
+        id: "surname",
+        name: "surname",
+        type: "text",
+        placeholder: "Rossi",
+      },
+      domProps: { value: _vm.fields.surname },
+      on: {
+        input: function ($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.$set(_vm.fields, "surname", $event.target.value)
+        },
+      },
+    }),
+    _vm._v(" "),
+    _c(
+      "label",
+      { staticClass: "my-3", attrs: { for: "exampleFormControlInput1" } },
+      [_vm._v("E-Mail")]
+    ),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.fields.mail,
+          expression: "fields.mail",
+        },
+      ],
+      staticClass: "form-control",
+      attrs: {
+        id: "mail",
+        name: "mail",
+        type: "text",
+        placeholder: "mario.rossi@mail.com",
+      },
+      domProps: { value: _vm.fields.mail },
+      on: {
+        input: function ($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.$set(_vm.fields, "mail", $event.target.value)
+        },
+      },
+    }),
+    _vm._v(" "),
+    _vm._m(0),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("label", { attrs: { for: "exampleFormControlInput1" } }, [
-        _vm._v("Nome"),
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Mario" },
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "exampleFormControlInput1" } }, [
-        _vm._v("Cognome"),
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "Rossi" },
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "exampleFormControlInput1" } }, [
-        _vm._v("E-Mail"),
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", placeholder: "mario.rossi@mail.com" },
-      }),
+    return _c("div", { staticClass: "col-md-8 offset-md-4 my-3" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        [_vm._v("\n            Invia\n        ")]
+      ),
     ])
   },
 ]
