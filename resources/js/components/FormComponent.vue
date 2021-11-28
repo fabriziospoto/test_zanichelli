@@ -47,7 +47,7 @@ export default ({
                     alert(error.response.data.errors.surname);
                 }
                 if (error.response.data.errors.mail = []) {
-                    alert(error.response.data.message);
+                    alert('The mail field is invalid or missing');
                 }
             
             });

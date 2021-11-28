@@ -2150,7 +2150,7 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         if (error.response.data.errors.mail = []) {
-          alert(error.response.data.message);
+          alert('The mail field is invalid or missing');
         }
       });
     }
