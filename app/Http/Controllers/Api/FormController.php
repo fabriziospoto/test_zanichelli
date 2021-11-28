@@ -10,8 +10,7 @@ use Illuminate\Http\Request;
 class FormController extends Controller
 {
     public function store(StoreFormRequest $request)
-    {
-        
+    {   
         $user = new User;
         $user->name = $request->name;
         $user->surname = $request->surname;
