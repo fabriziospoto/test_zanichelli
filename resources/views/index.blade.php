@@ -9,11 +9,14 @@
 
     <script src="{{ asset('/js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" >
-
+    
 </head>
 <body>
     <div id="app" class="container d-flex justify-content-center">
         <form-component csrf="{{csrf_token()}}"></form-component>
+        @if(session('message'))
+        <div class="alert alert-success"  role="alert">{{ session('message') }}</div>
+        @endif
     </div>
 </body>
 </html>

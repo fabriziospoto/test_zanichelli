@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/store', 'App\Http\Controllers\Api\FormController@Store')->name('store');
+Route::get('/find', 'App\Http\Controllers\Api\FormController@Find')->name('find');
 
 Route::get('/', function () {
     return view('index');

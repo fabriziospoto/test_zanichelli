@@ -2136,22 +2136,18 @@ __webpack_require__.r(__webpack_exports__);
       var axios = (__webpack_require__(/*! axios */ "./node_modules/axios/index.js")["default"]);
 
       axios.post('store', this.fields).then(function (response) {
-        _this.fields = {};
-        alert('Caricamento riuscito');
+        _this.fields = {}; // alert('Caricamento riuscito');
       })["catch"](function (error) {
         console.log('Error', error.response.data); // alert('Caricamento non riuscito. Uno o più dati sbagliati o mancanti.');
-
-        if (!_this.fields.name) {
-          alert(error.response.data.errors.name);
-        }
-
-        if (!_this.fields.surname) {
-          alert(error.response.data.errors.surname);
-        }
-
-        if (error.response.data.errors.mail = []) {
-          alert('The mail field is invalid or missing');
-        }
+        // if (!this.fields.name) {
+        //     alert(error.response.data.errors.name);
+        // }
+        // if (!this.fields.surname) {
+        //     alert(error.response.data.errors.surname);
+        // }
+        // if (error.response.data.errors.mail = []) {
+        //     alert('The mail field is invalid or missing');
+        // }
       });
     }
   }

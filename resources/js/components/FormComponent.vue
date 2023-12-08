@@ -34,21 +34,21 @@ export default ({
             axios.post('store', this.fields)
             .then(response => {
                 this.fields = {};
-                alert('Caricamento riuscito');
+                // alert('Caricamento riuscito');
 
             }).catch(error => {
                 console.log('Error', error.response.data);
                 // alert('Caricamento non riuscito. Uno o più dati sbagliati o mancanti.');
 
-                if (!this.fields.name) {
-                    alert(error.response.data.errors.name);
-                }
-                if (!this.fields.surname) {
-                    alert(error.response.data.errors.surname);
-                }
-                if (error.response.data.errors.mail = []) {
-                    alert('The mail field is invalid or missing');
-                }
+                // if (!this.fields.name) {
+                //     alert(error.response.data.errors.name);
+                // }
+                // if (!this.fields.surname) {
+                //     alert(error.response.data.errors.surname);
+                // }
+                // if (error.response.data.errors.mail = []) {
+                //     alert('The mail field is invalid or missing');
+                // }
             
             });
         }
