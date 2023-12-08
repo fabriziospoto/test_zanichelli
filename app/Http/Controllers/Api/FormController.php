@@ -34,13 +34,12 @@ class FormController extends Controller
             $user->mail = $request->mail;
             $user->save();
             
-            $mex = 'Ok';
+            // $mex = 'Ok';
         } else {
-            $mex = 'Not ok';
+            // $mex = 'Not ok';
         }
         
+        return back(); // ->with('success_message', 'Contact added!')
 
-        return redirect('/')->with('message', $mex);
-        // return session()->now('message', 'bella');
     }
 }
